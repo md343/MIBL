@@ -1,5 +1,5 @@
 # MIBL
-Matt's Image-Based Localisation (MIBL) is a Python implementation of a global feature extracting and classifying technique designed for localisation. It uses a NetVLAD CNN to compute image features, and a nearest neighbour search to identify the closest match from an existing dataset of image features.
+Matt's Image-Based Localisation (MIBL) is a Python implementation of a global feature extracting and classifying technique designed for localisation. It uses HLOC's (https://github.com/cvg/Hierarchical-Localization) feature extractor which uses a NetVLAD CNN to compute image features. A nearest neighbour search is used to identify the closest match from an existing dataset of image features.
 
 The local application outputs the localisation information to a window on your machine.
 
