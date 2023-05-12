@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></head>
+    <body>
+        <div class="container">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                function runFunction() {
+                    var loc = "empty";
+                    var url = '/img_retrieval?cache_bust=' + Date.now(); // Add cache-busting query string to URL
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: { 'loc': loc },
+                        success: function(response) {
+                            $('#content').html(response);
+                        },
+                    });
+                }
+            </script>
+            <h1>Image Retrieval</h1>
+            <button onclick="runFunction()">Localise</button>
+            <h2>Livestream:</h2>
+            <img src="{{ url_for('video_feed') }}">
+        </div>
+    </body>
+</html>
